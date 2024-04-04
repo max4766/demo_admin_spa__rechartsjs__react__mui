@@ -1,43 +1,88 @@
-# Getting Started with Create React App
+# Introduction
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This is a demo web page(ETELAB) where navigation bar redirects to another page with `react-router-dom`.
 
-In the project directory, you can run:
+Using this demo website, you can search information getting data from another server(localhost:8070) with `http-proxy-middleware`.
 
-### `npm start`
+All UI components in this React SPA project are `MUI` components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here we need port 3000 as the demo website, 8070 as the server.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(port 8070 used to be used for an acutal web development project, ETELAB)
 
-### `npm test`
+(can't provide you with the server source for port 8070 for now...)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+First, copy this project's URL and clone this project into your local with git :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone [project URL]
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+FYI, No need to make a new folder for this project. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+it is already packed in the folder with it's project name when you clone.
 
-### `npm run eject`
+Then, recover packages. update node_modules with the command below :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Next, run the development server with one of the commands below (npm recommended) :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run dev
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+yarn dev
+```
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Congratulations! you can now see the view of this project! 
+
+## About the source
+
+- `src/components/ContentReqAll.js` : when redirected to '/contentReqAll', shows search form and search result.
+
+since it's impossible to make a full packet to get the data from the server, added extra values in handleSearch function.
+
+uses `axios` to transfer and transmit data.
+
+there are a few more functions here related to setting the packet and the datagrid. 
+
+- `src/components/Header.js` : source that stands for top and side navigation and it has functions for them. 
+
+uses usenavigate to redirect. 
+
+- `src/App.js` : when redirected it shows the element of route tag.
+
+- `src/setProxy.js` : this is required for CORS. since it gets data with proxy, 
+
+the server enables you to get data from it.
+
+## Goal
+
+The goal of this project was `To set up route for redirection and proxy for data communication when using react`
+
+Unlike Next.js, React doesn't provide you with ready-made features like auto route.
+
+ofc it takes more time and effort to make an ecosystem for these features so it might be inconvenient.
+
+It would be much more convenient if you use Next.js for this framework even provides SSR and DB connection as well.
+
+Yet, Using React is way more faster than MVC web development that uses vanilla HTML, CSS, Javascript.
+
+Also, you can seperate client and server side not even mentioning UI has no problems with blinking issues.
 
 ## Learn More
 
