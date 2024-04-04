@@ -2,17 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a demo web page(ETELAB) where navigation bar redirects to another page with `react-router-dom`.
+This is a demo web page shows a datasheet with `react-datasheet-grid` and a chart  with `recharts`.
 
-Using this demo website, you can search information getting data from another server(localhost:8070) with `http-proxy-middleware`.
+You can add rows and extra contents in the datasheet yet it doesn't save data you would type.
 
-All UI components in this React SPA project are `MUI` components.
+BarChart data here is locally defined as 'data'. You can check recharts UI.
 
-Here we need port 3000 as the demo website, 8070 as the server.
+When you hover Navigation bar, you can see the name of each icon.
 
-(port 8070 used to be used for an acutal web development project, ETELAB)
-
-(can't provide you with the server source for port 8070 for now...)
+All the components were made with `MUI`.
 
 ## Getting Started
 
@@ -52,37 +50,25 @@ Congratulations! you can now see the view of this project!
 
 ## About the source
 
-- `src/components/ContentReqAll.js` : when redirected to '/contentReqAll', shows search form and search result.
+- `src/components/Header.js` : This is the part where Navigationbar compromises using MUI components.
 
-since it's impossible to make a full packet to get the data from the server, added extra values in handleSearch function.
+even if you click the items, it won't redirect to other pages yet it shows the name of what each icon stands for.
 
-uses `axios` to transfer and transmit data.
+- `src/components/Main.js` : Main page where MainBarChart.js and MainDatasheet.js contents are mingled up in MUI grid component.
 
-there are a few more functions here related to setting the packet and the datagrid. 
+- `src/components/MainBarChart.js` : Barchart. Data is defined here. It doesn't get data from other servers.
 
-- `src/components/Header.js` : source that stands for top and side navigation and it has functions for them. 
+this shows how recharts UI looks like.
 
-uses usenavigate to redirect. 
+- `src/components/MainDatasheet.js` : Datasheet. As a default, you can add items by click Add button in a combination with adjusting rows input.
 
-- `src/App.js` : when redirected it shows the element of route tag.
-
-- `src/setProxy.js` : this is required for CORS. since it gets data with proxy, 
-
-the server enables you to get data from it.
+there is no option to save data here.
 
 ## Goal
 
-The goal of this project was `To set up route for redirection and proxy for data communication when using react`
+The goal of this project was `To swiftly ideate a concept with ready-made components with React and MUI`.
 
-Unlike Next.js, React doesn't provide you with ready-made features like auto route.
-
-ofc it takes more time and effort to make an ecosystem for these features so it might be inconvenient.
-
-It would be much more convenient if you use Next.js for this framework even provides SSR and DB connection as well.
-
-Yet, Using React is way more faster than MVC web development that uses vanilla HTML, CSS, Javascript.
-
-Also, you can seperate client and server side not even mentioning UI has no problems with blinking issues.
+this project has taken only less than an hour thought it takes a huge amount of time if you markup without framework and library.
 
 ## Learn More
 
